@@ -4,7 +4,14 @@ public class BuildingEntity {
 	private String name;
 	private String street;
 	private String ward;
-	private Integer numberOfBasement;
+	private Long id;
+	private Long districtid;
+	private Long floorarea;
+	private Long rentprice;
+	private String servicefee;
+	private Long brokeragefee;
+	private String managername;
+	private String managerphonenumber;
 	public String getName() {
 		return name;
 	}
@@ -23,13 +30,53 @@ public class BuildingEntity {
 	public void setWard(String ward) {
 		this.ward = ward;
 	}
-	public Integer getNumberOfBasement() {
-		return numberOfBasement;
+	public Long getId() {
+		return id;
 	}
-	public void setNumberOfBasement(Integer numberOfBasement) {
-		this.numberOfBasement = numberOfBasement;
+	public void setId(Long id) {
+		this.id = id;
 	}
-
-
+	public Long getDistrictid() {
+		return districtid;
+	}
+	public void setDistrictid(Long districtid) {
+		this.districtid = districtid;
+	}
+	public Long getFloorarea() {
+		return floorarea;
+	}
+	public void setFloorarea(Long floorarea) {
+		this.floorarea = floorarea;
+	}
+	public Long getRentprice() {
+		return rentprice;
+	}
+	public void setRentprice(Long rentprice) {
+		this.rentprice = rentprice;
+	}
+	public String getServicefee() {
+		return servicefee;
+	}
+	public void setServicefee(String servicefee) {
+		this.servicefee = servicefee;
+	}
+	public Long getBrokeragefee() {
+		return brokeragefee;
+	}
+	public void setBrokeragefee(Long brokeragefee) {
+		this.brokeragefee = brokeragefee;
+	}
+	public String getManagername() {
+		return managername;
+	}
+	public void setManagername(String managername) {
+		this.managername = managername;
+	}
+	public String getManagerphonenumber() {
+		return managerphonenumber;
+	}
+	public void setManagerphonenumber(String managerphonenumber) {
+		this.managerphonenumber = managerphonenumber;
+	}
 	
 }
