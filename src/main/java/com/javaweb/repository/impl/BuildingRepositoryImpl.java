@@ -15,12 +15,12 @@ import com.javaweb.repository.entity.BuildingEntity;
 
 @Repository
 public class BuildingRepositoryImpl implements BuildingRepository{
-	static final String URL = "jdbc:mysql://localhost:3306/estatebasic";
+	static final String URL = "jdbc:mysql://localhost:3306/estatebasics?useSSL=false";
 	static final String USER = "root";
 	static final String PASSWORD = "Longfb1231@";
 	@Override
 	public List<BuildingEntity> findAll(String name) {
-		String sql = "SELECT * FROM building where name like '%" + name + "%'";
+		String sql = "SELECT * FROM building WHERE name LIKE '%" + name + "%'";
 		List<BuildingEntity> result = new ArrayList<>();
 		try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 				Statement stmt = connection.createStatement();

@@ -24,9 +24,4 @@ public class BuildingAPI {
 		return result;
 	}
 
-	public void valiDate(BuildingDTO buildingDTO) {
-		if (buildingDTO.getName() == null || buildingDTO.getName().equals("")) {
-			throw new FieldRequiredException("name is null");
-		}
-	}
 }
