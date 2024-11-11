@@ -18,7 +18,7 @@ import com.javaweb.utils.StringUtil;
 
 @Repository
 public class BuildingRepositoryImpl implements BuildingRepository{
-	static final String URL = "jdbc:mysql://localhost:3306/estatebasics";
+	static final String URL = "jdbc:mysql://localhost:3306/estatebasics?useSSL=false";
 	static final String USER = "root";
 	static final String PASSWORD = "Longfb1231@";
 	
@@ -87,7 +87,7 @@ public class BuildingRepositoryImpl implements BuildingRepository{
 	}
 	@Override
 	public List<BuildingEntity> findAll(Map<String,Object> params,List<String> typeCode) {
-		StringBuilder sql = new StringBuilder("SELECT b.id,b.name,b.districtid,b.street,b.numberofbasement,b.floorarea,b.rentprice,b.managername,b.managerphonenumber,b.servicefee,b.brokeragefee FROM building b");
+		StringBuilder sql = new StringBuilder("SELECT b.id,b.name,b.districtid,b.ward,b.street,b.numberofbasement,b.floorarea,b.rentprice,b.managername,b.managerphonenumber,b.servicefee,b.brokeragefee FROM building b");
 		StringBuilder where =new StringBuilder(" where 1=1 ");
 		joinTable(params,typeCode,sql);
 		queryNormal(params, where);
@@ -97,7 +97,7 @@ public class BuildingRepositoryImpl implements BuildingRepository{
 		List<BuildingEntity> result = new ArrayList<>();
 		try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 				Statement stmt = connection.createStatement();
-				ResultSet rs = stmt.executeQuery(sql.toString());) {
+				ResultSet rs = stmt.executeQuery(sql.toString())) {
 			while(rs.next()) {
 				BuildingEntity building = new BuildingEntity();
 				building.setId(rs.getLong("b.id"));
